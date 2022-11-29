@@ -1,0 +1,81 @@
+<script setup lang="ts">
+import { Icon } from "../../..";
+
+interface SidebarProps {
+  closeColor?: string;
+  isSidebarOpen?: boolean;
+}
+
+defineProps<SidebarProps>();
+
+defineEmits(["closeSidebar"]);
+
+const isMobile = window.innerWidth <= 768;
+</script>
+
+<template>
+  <div v-show="isSidebarOpen" class="overlay" @click="$emit('closeSidebar')" />
+  <aside v-show="isSidebarOpen" class="sidebar">
+    <slot />
+    <Icon
+      v-if="isMobile"
+      :color="closeColor"
+      name="close"
+      class="close"
+      @click="$emit('closeSidebar')"
+    />
+  </aside>
+</template>
+
+<style scoped lang="scss">
+@import "../../../assets/scss/breakpoints.scss";
+
+@include max($desktop) {
+  .sidebar {
+    background-color: var(--contrast-1);
+    border-radius: var(--radius, 6px);
+    box-shadow: var(--card-shadow, 0 0 5px -1px #aaa);
+    display: flex;
+    flex-direction: column;
+    padding: calc(var(--spacing) / 2) calc(var(--spacing) / 4);
+    row-gap: 1em;
+    height: 100vh;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 80vw;
+    z-index: 3;
+
+    > .icon {
+      position: absolute;
+      z-index: 3;
+      right: -31px;
+      top: 20px;
+      background-color: var(--contrast-1);
+      border: {
+        top-right-radius: 100%;
+        bottom-right-radius: 100%;
+      }
+      padding: {
+        right: 5px;
+        top: 5px;
+        bottom: 5px;
+        left: 5px;
+      }
+    }
+  }
+
+  .overlay {
+    background-color: #000;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    z-index: 2;
+    height: 100vh;
+    width: 100vw;
+    opacity: 0.6;
+  }
+}
+</style>

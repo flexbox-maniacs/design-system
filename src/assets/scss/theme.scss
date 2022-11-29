@@ -1,0 +1,29 @@
+body {
+  font-family: "Montserrat";
+  background-color: var(--body, #fff);
+}
+
+:root {
+  /*  colors */
+  --body-background: #fafafa;
+  --card-shadow: 0 0 5px -1px #aaa;
+  --contrast-1: #0f0;
+  --contrast-2: #00f;
+  --input-hover: #ff0;
+  --primary: #f00;
+  --link: #fa0;
+  --text-color: #f0f;
+  --text-muted: 0.6;
+
+  /* color -selectors */
+  --body: var(--body-background);
+  --card-bg: var(--contrast-1);
+  --input-bg: var(--contrast-2);
+
+  /* shadows */
+  --color-shadow: 0 0 5px 2px #11111160;
+
+  /* measurements */
+  --radius: 6px;
+  --spacing: calc(50px + 2vw);
+}

@@ -1,0 +1,91 @@
+<script setup lang="ts">
+import { computed } from "@vue/reactivity";
+import { ref, type Ref } from "vue";
+import { Icon } from "../../..";
+
+interface ToastProps {
+  text?: string | object;
+  variant?: string;
+}
+
+const props = defineProps<ToastProps>();
+
+const toastClass: Ref<Array<string>> = ref([]);
+
+if (
+  props.variant === "danger" ||
+  props.variant === "info" ||
+  props.variant === "success" ||
+  props.variant === "warning"
+) {
+  toastClass.value.push(`-${props.variant}`);
+}
+
+const iconName = computed<string | undefined>(() => {
+  if (props.variant === "danger") {
+    return "error_outline";
+  }
+
+  if (props.variant === "info") {
+    return "info";
+  }
+
+  if (props.variant === "success") {
+    return "check_circle";
+  }
+
+  if (props.variant === "warning") {
+    return "warning_amber";
+  }
+});
+</script>
+
+<template>
+  <div class="toast" :class="toastClass">
+    <Icon v-if="props.variant" :name="iconName" />
+    <slot />
+  </div>
+</template>
+
+<style scoped lang="scss">
+.toast {
+  @keyframes slideUp {
+    0% {
+      transform: translateY(calc(100% + 1.5vw));
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  border-radius: var(--radius, 6px);
+  box-shadow: var(--card-shadow, 0 0 5px -1px #aaa);
+  position: fixed;
+  bottom: 1.5vw;
+  left: 1.5vw;
+  max-width: 500px;
+  background-color: var(--toast-bg);
+  padding: calc(var(--spacing) / 6);
+  display: flex;
+  column-gap: calc(var(--spacing) / 6);
+  align-items: flex-start;
+  color: #000;
+  animation: {
+    name: slideUp;
+    duration: 0.3s;
+    timing-function: ease-in-out;
+  }
+
+  &.-danger {
+    --toast-bg: #ff5555;
+  }
+
+  &.-success {
+    --toast-bg: #44ff44;
+  }
+
+  &.-info {
+    --toast-bg: #4444ff;
+  }
+}
+</style>

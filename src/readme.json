@@ -1,0 +1,290 @@
+[
+  {
+    "type": "Section",
+    "components": [
+      {
+        "component": "Header",
+        "props": [
+          {
+            "prop": "align",
+            "type": "string",
+            "options": [
+              "'around'",
+              "'center'",
+              "'evenly'",
+              "'left'",
+              "'right'"
+            ],
+            "explanation": "alinhamento do cabeçalho"
+          },
+          {
+            "prop": "vertical",
+            "type": "boolean",
+            "explanation": "define se a direção do cabeçalho é vertical"
+          },
+          {
+            "prop": "menuColor",
+            "type": "string",
+            "explanation": "cor do botão de menu mobile do cabeçalho"
+          }
+        ]
+      },
+      {
+        "component": "Sidebar",
+        "props": [
+          {
+            "prop": "closeColor",
+            "type": "string",
+            "explanation": "cor do botão para fechar a sidebar"
+          },
+          {
+            "prop": "isSidebarOpen",
+            "type": "boolean",
+            "explanation": "define se a sidebar está aberta"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "Ui",
+    "components": [
+      {
+        "component": "Button",
+        "props": [
+          {
+            "prop": "brand",
+            "type": "boolean",
+            "explanation": "define se o ícone do botão é de alguma marca"
+          },
+          { "prop": "color", "type": "string", "explanation": "cor do botão" },
+          {
+            "prop": "endingIcon",
+            "type": "string",
+            "explanation": "ícone do botão (final)"
+          },
+          {
+            "prop": "fill",
+            "type": "boolean",
+            "explanation": "define se o botão é preenchido"
+          },
+          {
+            "prop": "href",
+            "type": "string",
+            "explanation": "link externo para o botão"
+          },
+          {
+            "prop": "icon",
+            "type": "string",
+            "explanation": "ícone do botão (padrão no início)"
+          },
+          {
+            "prop": "label",
+            "type": "string",
+            "explanation": "texto do botão"
+          },
+          {
+            "prop": "startingIcon",
+            "type": "string",
+            "explanation": "ícone do botão (início)"
+          },
+          {
+            "prop": "submit",
+            "type": "boolean",
+            "explanation": "define se o botão envia um formulário"
+          },
+          {
+            "prop": "to",
+            "type": "string | object",
+            "explanation": "link interno do botão"
+          },
+          {
+            "prop": "uppercase",
+            "type": "boolean",
+            "explanation": "define se o texto do botão é em caixa alta"
+          },
+          {
+            "prop": "var",
+            "type": "string",
+            "explanation": "variável para a cor do botão"
+          }
+        ]
+      },
+      {
+        "component": "Card",
+        "props": [
+          {
+            "prop": "bodyAlign",
+            "type": "string",
+            "options": ["'left'", "'center'", "'right'"],
+            "explanation": "alinhamento principal do card"
+          },
+          {
+            "prop": "href",
+            "type": "string",
+            "explanation": "link externo do card"
+          },
+          {
+            "prop": "subtitle",
+            "type": "string",
+            "explanation": "subtítulo do card"
+          },
+          {
+            "prop": "title",
+            "type": "string",
+            "explanation": "título do card"
+          },
+          {
+            "prop": "titleAlign",
+            "type": "string",
+            "options": ["'left'", "'center'", "'right'"],
+            "explanation": "alinhamento do título do card"
+          },
+          {
+            "prop": "to",
+            "type": "string | object",
+            "explanation": "link interno do card"
+          }
+        ]
+      },
+      {
+        "component": "Cell",
+        "props": [
+          {
+            "prop": "lg",
+            "type": "number | string",
+            "explanation": "tamanho da célula (desktop)"
+          },
+          {
+            "prop": "size",
+            "type": "number | string",
+            "explanation": "tamanho da célula (mobile)"
+          }
+        ]
+      },
+      {
+        "component": "Container",
+        "props": [
+          {
+            "prop": "align",
+            "type": "string",
+            "options": ["'left'", "'right'"],
+            "explanation": "alinhamento horizontal do container"
+          }
+        ]
+      },
+      {
+        "component": "Flexbox",
+        "wip": true,
+        "props": [
+          {
+            "prop": "align",
+            "type": "string",
+            "options": [
+              "'baseline'",
+              "'center'",
+              "'end'",
+              "'start'",
+              "'stretch'"
+            ],
+            "explanation": "alinhamento vertical do agrupador"
+          },
+          {
+            "prop": "class",
+            "type": "string",
+            "explanation": "adiciona a class ao agrupador"
+          },
+          {
+            "prop": "column",
+            "type": "boolean",
+            "explanation": "define se a direção do agrupador é em coluna"
+          },
+          {
+            "prop": "gap",
+            "type": "string",
+            "explanation": "espaçamento entre os elemntos filhos do agrupador"
+          },
+          {
+            "prop": "justify",
+            "type": "string",
+            "options": ["'around'", "'between'", "'center'", "'evenly'"],
+            "explanation": "alinhamento horizontal do agrupador"
+          },
+          {
+            "prop": "wrap",
+            "type": "boolean",
+            "explanation": "define se os elementos dentro do agrupador irão quebrar a linha"
+          }
+        ]
+      },
+      {
+        "component": "Grid"
+      },
+      {
+        "component": "Icon",
+        "props": [
+          { "prop": "name", "type": "string", "explanation": "nome do ícone" },
+          {
+            "prop": "color",
+            "type": "string",
+            "options": ["'primary'", "'secondary'", "any"],
+            "explanation": "cor do ícone"
+          },
+          {
+            "prop": "brand",
+            "type": "boolean",
+            "explanation": "define se o ícone do botão é de alguma marca"
+          },
+          {
+            "prop": "type",
+            "type": "string",
+            "options": ["'rounded", "'filled'"],
+            "explanation": "estilo do ícone"
+          }
+        ]
+      },
+      {
+        "component": "Link",
+        "props": [
+          { "prop": "to", "type": "string", "explanation": "link interno" },
+          { "prop": "href", "type": "string", "explanation": "link externo" },
+          {
+            "prop": "color",
+            "type": "string",
+            "options": ["'primary'", "'secondary'", "any"],
+            "explanation": "cor do link"
+          }
+        ]
+      },
+      {
+        "component": "Stack",
+        "wip": true
+      },
+      {
+        "component": "Text",
+        "props": [
+          {
+            "prop": "color",
+            "type": "string",
+            "options": ["'primary'", "'secondary'", "any"],
+            "explanation": "cor do texto"
+          },
+          {
+            "prop": "bold",
+            "type": "boolean",
+            "explanation": "define se o texto é em negrito"
+          },
+          {
+            "prop": "strong",
+            "type": "boolean",
+            "explanation": "define se o texto é de destaque"
+          }
+        ]
+      },
+      {
+        "component": "Toast",
+        "wip": true
+      }
+    ]
+  }
+]
