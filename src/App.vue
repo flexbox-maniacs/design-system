@@ -1,32 +1,22 @@
 <script setup lang="ts">
-import { computed, ref, type Ref } from "vue";
+import { computed, onMounted, ref, type Ref } from "vue";
 import { useRoute } from "vue-router";
 import { Header, Button, Stack } from ".";
+import { changeTheme, getBrowserTheme } from "@scripts";
 
 const icon: Ref<string | undefined> = ref("");
 
-function changeTheme() {
-  if (localStorage.getItem("theme") == "dark") {
-    localStorage.setItem("theme", "light");
-    icon.value = "dark_mode";
-  } else localStorage.setItem("theme", "dark"), (icon.value = "light_mode");
+const router = useRoute();
 
-  document.documentElement.setAttribute(
-    "theme",
-    localStorage.getItem("theme") || "{}"
-  );
+function themeHandler() {
+  changeTheme;
+  icon.value = changeTheme().icon;
 }
 
-if (localStorage.getItem("theme") == "dark") {
-  icon.value = "light_mode";
-} else localStorage.setItem("theme", "light"), (icon.value = "dark_mode");
-
-document.documentElement.setAttribute(
-  "theme",
-  localStorage.getItem("theme") || "{}"
-);
-
-const router = useRoute();
+onMounted(() => {
+  getBrowserTheme;
+  icon.value = getBrowserTheme().icon;
+});
 
 const dsTitle = computed<string>(() => {
   if (router.name == "readme") {
@@ -43,7 +33,7 @@ const dsTitle = computed<string>(() => {
         var="text-color"
         to="/"
       />
-      <Button var="text-color" :icon="icon" @click="changeTheme" />
+      <Button var="text-color" :icon="icon" @click="themeHandler" />
     </Stack>
 
     <div>
