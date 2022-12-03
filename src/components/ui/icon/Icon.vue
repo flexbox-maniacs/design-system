@@ -44,14 +44,5 @@ const iconName = computed<string | null | undefined>(() => {
 </template>
 
 <style scoped lang="scss">
-@import url("https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp");
-.icon {
-  &.-primary {
-    color: var(--primary);
-  }
-
-  &.-secondary {
-    color: var(--secondary);
-  }
-}
+@import "./Icon.scss";
 </style>

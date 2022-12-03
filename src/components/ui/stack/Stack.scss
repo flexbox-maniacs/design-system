@@ -1,0 +1,35 @@
+.stack {
+  --flex-align: var(--stack-align);
+  --flex-justify: var(--stack-justify);
+  --flex-gap: var(--stack-gap);
+
+  --stack-gap: var(--spacing);
+
+  &.-align {
+    &-baseline,
+    &-center,
+    &-end,
+    &-start,
+    &-stretch {
+      > * {
+        align-items: var(--stack-align);
+      }
+    }
+  }
+
+  &.-justify {
+    &-baseline,
+    &-center,
+    &-end,
+    &-start,
+    &-stretch {
+      > * {
+        justify-content: var(--stack-justify);
+      }
+    }
+  }
+
+  > * {
+    flex-basis: 100%;
+  }
+}

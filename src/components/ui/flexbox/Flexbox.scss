@@ -1,0 +1,68 @@
+.flexbox {
+  align-items: var(--flex-align);
+  display: flex;
+  gap: var(--flex-gap, 1rem);
+  justify-content: var(--flex-justify);
+
+  &.-align {
+    &-baseline {
+      --flex-align: baseline;
+    }
+
+    &-center {
+      --flex-align: center;
+    }
+
+    &-end {
+      --flex-align: flex-end;
+    }
+
+    &-start {
+      --flex-align: flex-start;
+    }
+
+    &-stretch {
+      --flex-align: stretch;
+    }
+  }
+
+  &.-column {
+    @include min($desktop) {
+      flex-direction: column;
+    }
+  }
+
+  &.-justify {
+    &-around {
+      --flex-justify: space-around;
+    }
+
+    &-between {
+      --flex-justify: space-between;
+    }
+
+    &-center {
+      --flex-justify: center;
+    }
+
+    &-end {
+      --flex-justify: flex-end;
+    }
+
+    &-evenly {
+      --flex-justify: space-evenly;
+    }
+
+    &-start {
+      --flex-justify: flex-start;
+    }
+  }
+
+  :not(.-wrap) {
+    flex-wrap: nowrap;
+  }
+
+  &.-wrap {
+    flex-wrap: wrap;
+  }
+}

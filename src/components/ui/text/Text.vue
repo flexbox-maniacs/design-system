@@ -33,21 +33,5 @@ if (props.strong) {
 </template>
 
 <style scoped lang="scss">
-.text {
-  &.-primary {
-    color: var(--primary);
-  }
-
-  &.-secondary {
-    color: var(--secondary);
-  }
-
-  &.-bold {
-    font-weight: 900;
-  }
-
-  &.-strong {
-    font-weight: 700;
-  }
-}
+@import "./Text.scss";
 </style>

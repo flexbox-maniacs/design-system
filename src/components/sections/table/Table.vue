@@ -38,30 +38,5 @@ defineProps<TableProps>();
 </template>
 
 <style lang="scss">
-.table {
-  width: 100%;
-
-  .table-item:not(:last-child) {
-    border-bottom: 1px solid #eee;
-  }
-
-  img {
-    max-width: 100px;
-  }
-
-  .units {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    column-gap: 0.75rem;
-
-    .icon {
-      font-size: 1em;
-
-      &:hover {
-        cursor: pointer;
-      }
-    }
-  }
-}
+@import "./Table.scss";
 </style>

@@ -1,0 +1,23 @@
+.color {
+  background-color: v-bind(color);
+  border-radius: 100%;
+  cursor: pointer;
+
+  @for $size from 1 through 100 {
+    &.-size-#{$size} {
+      height: $size + px;
+      width: $size + px;
+    }
+
+    &.-lg-size-#{$size} {
+      height: $size + px;
+      width: $size + px;
+    }
+  }
+
+  &:focus,
+  &:hover {
+    box-shadow: var(--color-shadow);
+    transform: scale(1.05);
+  }
+}

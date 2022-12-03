@@ -1,0 +1,32 @@
+.loader {
+  animation: spin 1s ease-in-out infinite;
+  border: {
+    color: transparent;
+    radius: 100%;
+    style: solid;
+    top-color: var(--primary);
+  }
+
+  @for $size from 1 through 999 {
+    &.-lg-size-#{$size} {
+      border-width: calc($size / 15) + px;
+      height: $size + px;
+      width: $size + px;
+    }
+
+    &.-size-#{$size} {
+      border-width: calc($size / 10) + px;
+      height: $size + px;
+      width: $size + px;
+    }
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

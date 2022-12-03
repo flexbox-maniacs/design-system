@@ -21,29 +21,5 @@ if (props.align === "left" || props.align === "right") {
 </template>
 
 <style scoped lang="scss">
-.container {
-  max-width: 1140px;
-  margin: {
-    left: auto;
-    right: auto;
-  }
-  padding: {
-    left: 20px;
-    right: 20px;
-  }
-
-  &.-align {
-    &-left {
-      text-align: left;
-    }
-
-    &-right {
-      text-align: right;
-    }
-  }
-
-  &:not(.-align-left, .-align-right) {
-    text-align: center;
-  }
-}
+@import "./Container.scss";
 </style>

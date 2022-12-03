@@ -28,25 +28,5 @@ if (props.size && !isMobile) {
 </template>
 
 <style scoped lang="scss">
-@import "../../../../assets/scss/breakpoints.scss";
-
-.cell {
-  @for $size from 1 through 12 {
-    &.-size-#{$size} {
-      flex-basis: calc(100% / (12 / $size));
-    }
-
-    &.-lg-size-#{$size} {
-      flex-basis: calc(100% / (12 / $size));
-    }
-  }
-
-  &.-auto {
-    flex-basis: auto;
-  }
-
-  @include max($desktop) {
-    width: 100%;
-  }
-}
+@import "./Cell.scss";
 </style>

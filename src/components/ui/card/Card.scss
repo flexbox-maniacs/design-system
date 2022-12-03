@@ -1,0 +1,26 @@
+.card {
+  border-radius: var(--radius, 6px);
+  padding: calc(var(--spacing, 5rem) / 2);
+
+  &:not(.-plain) {
+    background-color: var(--contrast-1);
+    box-shadow: var(--card-shadow, 0 0 5px -1px #aaa);
+  }
+
+  &.-plain {
+    background-color: var(--body);
+  }
+
+  .card-head:not(:last-child) {
+    margin-bottom: calc(var(--spacing, 5rem) / 3);
+  }
+
+  .card-title:not(:last-child) {
+    margin-bottom: calc(var(--spacing, 5rem) / 12);
+  }
+
+  .card-subtitle {
+    font-size: 0.85em;
+    opacity: var(--text-muted);
+  }
+}

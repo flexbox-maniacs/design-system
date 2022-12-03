@@ -24,44 +24,5 @@ defineProps<StackProps>();
 </template>
 
 <style lang="scss">
-@import "../../../assets/scss/breakpoints.scss";
-
-.stack {
-  --flex-align: var(--stack-align);
-  --flex-justify: var(--stack-justify);
-  --flex-gap: var(--stack-gap);
-
-  --stack-gap: var(--spacing);
-
-  &.-align {
-    &-baseline,
-    &-center,
-    &-end,
-    &-start,
-    &-stretch {
-      > * {
-        align-items: var(--stack-align);
-      }
-    }
-  }
-
-  &.-justify {
-    &-baseline,
-    &-center,
-    &-end,
-    &-start,
-    &-stretch {
-      > * {
-        justify-content: var(--stack-justify);
-      }
-    }
-  }
-
-  > * {
-    align-items: var(--stack-align);
-    display: flex;
-    flex-basis: 100%;
-    justify-content: var(--stack-justify);
-  }
-}
+@import "./Stack.scss";
 </style>

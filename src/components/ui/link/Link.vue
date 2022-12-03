@@ -45,15 +45,5 @@ if (props.color) {
 </template>
 
 <style scoped lang="scss">
-.link {
-  align-items: center;
-  column-gap: 0.15em;
-  cursor: pointer;
-  color: var(--link, -webkit-link);
-  display: inline-flex;
-
-  .link-new {
-    font-size: 0.8em;
-  }
-}
+@import "./Link.scss";
 </style>
