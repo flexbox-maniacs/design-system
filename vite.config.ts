@@ -9,6 +9,9 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),
+      "@scripts": fileURLToPath(
+        new URL("./node_modules/scripts/scripts.ts", import.meta.url)
+      ),
       "@theme": fileURLToPath(
         new URL("./node_modules/theme-default/scss/main.scss", import.meta.url)
       ),

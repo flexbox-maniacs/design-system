@@ -4,7 +4,9 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@scripts": ["./node_modules/scripts/scripts.ts"],
+      "@theme": ["./node_modules/theme-default/scss/main.scss"]
     }
   },
 
