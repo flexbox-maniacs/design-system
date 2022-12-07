@@ -13,6 +13,11 @@ const router = createRouter({
       name: "readme",
       component: () => import("../views/ReadMe.vue"),
     },
+    {
+      path: "/playground",
+      name: "playground",
+      component: () => import("../views/Playground.vue"),
+    },
   ],
 });
 

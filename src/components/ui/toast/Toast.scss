@@ -8,18 +8,26 @@
     }
   }
 
+  @keyframes fadeOff {
+    100% {
+      width: 0;
+      height: 0;
+    }
+  }
+
   border-radius: var(--radius, 6px);
   box-shadow: var(--card-shadow, 0 0 5px -1px #aaa);
   position: fixed;
   bottom: 1.5vw;
   left: 1.5vw;
   max-width: 500px;
-  background-color: var(--toast-bg);
+  text-align: left;
+  background-color: rgba(var(--toast-color), 0.15);
   padding: calc(var(--spacing) / 6);
+  border: 1px solid rgb(var(--toast-color));
   display: flex;
-  column-gap: calc(var(--spacing) / 6);
-  align-items: flex-start;
-  color: #000;
+  column-gap: calc(var(--spacing) / 12);
+  align-items: center;
   animation: {
     name: slideUp;
     duration: 0.3s;
@@ -27,14 +35,22 @@
   }
 
   &.-danger {
-    --toast-bg: #ff5555;
-  }
-
-  &.-success {
-    --toast-bg: #44ff44;
+    --toast-color: var(--danger);
   }
 
   &.-info {
-    --toast-bg: #4444ff;
+    --toast-color: var(--info);
+  }
+
+  &.-success {
+    --toast-color: var(--success);
+  }
+
+  &.-warning {
+    --toast-color: var(--warning);
+  }
+
+  .icon {
+    color: rgb(var(--toast-color));
   }
 }

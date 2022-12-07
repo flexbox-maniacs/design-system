@@ -3,7 +3,7 @@ import { ref, type Ref } from "vue";
 import { Icon } from "../../..";
 
 interface HeaderProps {
-  align?: string;
+  align?: "around" | "center" | "evenly" | "left" | "right";
   menuColor?: string;
   vertical?: boolean;
 }
@@ -14,13 +14,7 @@ const isMobile = window.innerWidth <= 768;
 
 const headerClass: Ref<Array<string>> = ref([]);
 
-if (
-  props.align === "around" ||
-  props.align === "center" ||
-  props.align === "evenly" ||
-  props.align === "left" ||
-  props.align === "right"
-) {
+if (props.align) {
   headerClass.value.push(`-align-${props.align}`);
 }
 

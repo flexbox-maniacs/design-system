@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, type Ref } from "vue";
-import { Button, Container, Flexbox, Icon, Toast } from "..";
+import { Button, Container, Flexbox, Toast } from "..";
 
 const text: Ref<any> = ref(null);
 
@@ -15,23 +15,30 @@ function onClick() {
   }, 3000);
 }
 
-const redirect: Ref<boolean> = ref<boolean>(true);
+const redirect: Ref<boolean> = ref(true);
 </script>
 
 <template>
   <div id="home">
-    <Container align="center">
+    <Container>
       <h2 class="title">ta querendo acessar o readme?</h2>
       <Flexbox justify="center">
-        <Button label="sim" variant="primary" to="/readme" />
+        <Button label="sim" variant="primary" :to="{ name: 'readme' }" />
         <Button label="não" variant="primary" @click="redirect = false" />
       </Flexbox>
       <div class="helper" v-show="!redirect">
         <strong ref="text"> yarn storybook </strong>
         <Button icon="content_copy" var="primary" @click="onClick" />
       </div>
-      <!-- <Toast variant="info" v-show="copied"> copiado </Toast> -->
-      <Toast variant="danger" v-show="copied"> copiado </Toast>
+      <Toast variant="info" v-show="copied">copiado</Toast>
+      <Flexbox align="center" justify="center">
+        <Button
+          icon="dashboard"
+          var="text-color"
+          :to="{ name: 'playground' }"
+        />
+        playground
+      </Flexbox>
     </Container>
   </div>
 </template>
@@ -61,7 +68,7 @@ const redirect: Ref<boolean> = ref<boolean>(true);
     }
   }
 
-  .title {
+  .container > *:not(:last-child) {
     margin-bottom: calc(var(--spacing) / 4);
   }
 
@@ -76,8 +83,8 @@ const redirect: Ref<boolean> = ref<boolean>(true);
     .btn {
       animation: {
         name: fade;
-        duration: 0.6s;
-        timing-function: ease-in-out;
+        duration: 0.7s;
+        timing-function: ease-out;
       }
     }
 

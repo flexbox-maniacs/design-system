@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from "vue";
+/* import { ref } from "vue";
 
 const props = defineProps({
   size: Number,
@@ -15,13 +15,13 @@ if (props.lg && !isMobile) {
 
 if (props.size) {
   loaderClass.value.push("-size-" + props.size);
-}
+} */
 </script>
 
 <template>
-  <div class="loader" :class="loaderClass" />
+  <div class="loader" />
 </template>
-
+<!-- 
 <style scoped lang="scss">
 @import "./Loader.scss";
-</style>
+</style> -->

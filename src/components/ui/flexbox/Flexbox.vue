@@ -3,47 +3,26 @@
 import { ref, type Ref } from "vue";
 
 interface FlexboxProps {
-  align?: string;
-  class?: string;
+  align?: "baseline" | "center" | "end" | "start" | "stretch";
   column?: boolean;
   gap?: string;
-  justify?: string;
-  wrap?: boolean;
+  justify?: "around" | "between" | "center" | "evenly";
 }
 
 const props = defineProps<FlexboxProps>();
 
-const flexboxClass: Ref<Array<string>> = ref(["flexbox"]);
+const flexboxClass: Ref<Array<string>> = ref([""]);
 
-if (
-  props.align === "baseline" ||
-  props.align === "center" ||
-  props.align === "end" ||
-  props.align === "start" ||
-  props.align === "stretch"
-) {
+if (props.align) {
   flexboxClass.value.push(`-align-${props.align}`);
-}
-
-if (props.class) {
-  flexboxClass.value.unshift(props.class);
 }
 
 if (props.column) {
   flexboxClass.value.push("-column");
 }
 
-if (
-  props.justify === "around" ||
-  props.justify === "between" ||
-  props.justify === "center" ||
-  props.justify === "evenly"
-) {
+if (props.justify) {
   flexboxClass.value.push(`-justify-${props.justify}`);
-}
-
-if (props.wrap) {
-  flexboxClass.value.push("-wrap");
 }
 
 const flexboxStyle: Ref<Array<string>> = ref([]);
@@ -54,11 +33,11 @@ if (props.gap) {
 </script>
 
 <template>
-  <div :class="flexboxClass" :style="flexboxStyle">
+  <div class="flexbox" :class="flexboxClass" :style="flexboxStyle">
     <slot />
   </div>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss">
 @import "./Flexbox.scss";
 </style>

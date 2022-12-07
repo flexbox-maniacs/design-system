@@ -21,4 +21,8 @@ if (props.size) {
 
 <style scoped lang="scss">
 @import "./Color.scss";
+
+.color {
+  background-color: v-bind(color);
+}
 </style>

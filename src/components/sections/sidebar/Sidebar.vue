@@ -27,6 +27,6 @@ const isMobile = window.innerWidth <= 768;
   </aside>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss">
 @import "./Sidebar.scss";
 </style>

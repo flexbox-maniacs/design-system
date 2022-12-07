@@ -4,6 +4,7 @@
     "components": [
       {
         "component": "Header",
+        "explanation": "renderiza o cabeçalho da página",
         "props": [
           {
             "prop": "align",
@@ -31,6 +32,8 @@
       },
       {
         "component": "Sidebar",
+        "wip": true,
+        "explanation": "renderiza o menu lateral do mobile",
         "props": [
           {
             "prop": "closeColor",
@@ -43,6 +46,11 @@
             "explanation": "define se a sidebar está aberta"
           }
         ]
+      },
+      {
+        "component": "Table",
+        "wip": true,
+        "explanation": "renderiza uma tabela"
       }
     ]
   },
@@ -51,6 +59,7 @@
     "components": [
       {
         "component": "Button",
+        "explanation": "renderiza um botão",
         "props": [
           {
             "prop": "brand",
@@ -112,6 +121,7 @@
       },
       {
         "component": "Card",
+        "explanation": "renderiza um card",
         "props": [
           {
             "prop": "bodyAlign",
@@ -149,6 +159,7 @@
       },
       {
         "component": "Cell",
+        "explanation": "renderiza a célula de um grid",
         "props": [
           {
             "prop": "lg",
@@ -164,6 +175,7 @@
       },
       {
         "component": "Container",
+        "explanation": "renderiza um container para a página",
         "props": [
           {
             "prop": "align",
@@ -175,7 +187,7 @@
       },
       {
         "component": "Flexbox",
-        "wip": true,
+        "explanation": "renderiza uma flexbox",
         "props": [
           {
             "prop": "align",
@@ -188,11 +200,6 @@
               "'stretch'"
             ],
             "explanation": "alinhamento vertical do agrupador"
-          },
-          {
-            "prop": "class",
-            "type": "string",
-            "explanation": "adiciona a class ao agrupador"
           },
           {
             "prop": "column",
@@ -209,19 +216,16 @@
             "type": "string",
             "options": ["'around'", "'between'", "'center'", "'evenly'"],
             "explanation": "alinhamento horizontal do agrupador"
-          },
-          {
-            "prop": "wrap",
-            "type": "boolean",
-            "explanation": "define se os elementos dentro do agrupador irão quebrar a linha"
           }
         ]
       },
       {
-        "component": "Grid"
+        "component": "Grid",
+        "explanation": "renderiza um grid para receber as células"
       },
       {
         "component": "Icon",
+        "explanation": "renderiza um ícone",
         "props": [
           { "prop": "name", "type": "string", "explanation": "nome do ícone" },
           {
@@ -245,6 +249,7 @@
       },
       {
         "component": "Link",
+        "explanation": "renderiza um componente de link",
         "props": [
           { "prop": "to", "type": "string", "explanation": "link interno" },
           { "prop": "href", "type": "string", "explanation": "link externo" },
@@ -258,10 +263,11 @@
       },
       {
         "component": "Stack",
-        "wip": true
+        "explanation": "renderiza um empilhador de elementos, que os faz crescerem automaticamente"
       },
       {
         "component": "Text",
+        "explanation": "renderiza um texto personalizável",
         "props": [
           {
             "prop": "color",
@@ -283,7 +289,20 @@
       },
       {
         "component": "Toast",
-        "wip": true
+        "explanation": "renderiza um toast na página",
+        "props": [
+          {
+            "prop": "label",
+            "type": "string | object",
+            "explanation": "texto do toast"
+          },
+          {
+            "prop": "variant",
+            "type": "string",
+            "options": ["'danger'", "'info'", "success", "warning"],
+            "explanation": "variante do toast"
+          }
+        ]
       }
     ]
   }

@@ -26,18 +26,24 @@ const dsTitle = computed<string>(() => {
 </script>
 <template>
   <Header align="center" vertical>
-    <Stack gap="1rem">
+    <Stack>
       <Button
-        v-if="$route.name === 'readme'"
+        v-if="$route.name !== 'playground'"
+        icon="dashboard"
+        var="text-color"
+        :to="{ name: 'playground' }"
+      />
+      <Button
+        v-if="$route.name !== 'home'"
         icon="house"
         var="text-color"
-        to="/"
+        :to="{ name: 'home' }"
       />
       <Button var="text-color" :icon="icon" @click="themeHandler" />
     </Stack>
 
     <div>
-      <h2 v-text="dsTitle" />
+      <h1 v-text="dsTitle" />
     </div>
   </Header>
   <main>

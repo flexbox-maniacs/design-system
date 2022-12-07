@@ -6,7 +6,8 @@
     "paths": {
       "@/*": ["./src/*"],
       "@scripts": ["./node_modules/scripts/scripts.ts"],
-      "@theme": ["./node_modules/theme-default/scss/main.scss"]
+      "@theme": ["./node_modules/theme-default/scss/main.scss"],
+      "@theme-dev": ["./node_modules/theme-default_dev/scss/main.scss"]
     }
   },
 

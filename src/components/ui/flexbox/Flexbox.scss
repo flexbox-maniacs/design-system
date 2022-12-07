@@ -1,7 +1,9 @@
+@import "../../../assets/scss/breakpoints.scss";
+
 .flexbox {
   align-items: var(--flex-align);
   display: flex;
-  gap: var(--flex-gap, 1rem);
+  gap: var(--flex-gap, calc(var(--spacing) / 2));
   justify-content: var(--flex-justify);
 
   &.-align {
@@ -56,13 +58,5 @@
     &-start {
       --flex-justify: flex-start;
     }
-  }
-
-  :not(.-wrap) {
-    flex-wrap: nowrap;
-  }
-
-  &.-wrap {
-    flex-wrap: wrap;
   }
 }

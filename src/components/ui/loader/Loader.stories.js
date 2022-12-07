@@ -1,4 +1,4 @@
-import Loader from "./Loader.vue";
+/* import Loader from "./Loader.vue";
 
 export default {
   title: "ui/Loader",
@@ -15,3 +15,4 @@ const Template = (args) => ({
 });
 
 export const Default = Template.bind({});
+ */

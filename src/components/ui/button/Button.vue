@@ -20,12 +20,8 @@ interface ButtonProps {
 const props = defineProps<ButtonProps>();
 
 const btnComponent = computed<string | object>(() => {
-  if (props.href) {
+  if (props.href || props.to) {
     return Link;
-  }
-
-  if (props.to) {
-    return "RouterLink";
   } else return "button";
 });
 

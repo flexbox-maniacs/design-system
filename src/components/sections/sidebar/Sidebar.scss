@@ -1,3 +1,5 @@
+@import "../../../assets/scss/breakpoints.scss";
+
 @include max($desktop) {
   .sidebar {
     background-color: var(--contrast-1);

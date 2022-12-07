@@ -5,7 +5,11 @@ import { Card } from "..";
 interface ComponentShowcaseProps {
   title: string;
   props: Array<any>;
+  componentChanged: boolean;
 }
+
+const emit = defineEmits(["prop-changed"]);
+
 const props = defineProps<ComponentShowcaseProps>();
 
 const selectedProp: Ref<string> = ref("");
@@ -25,6 +29,7 @@ function onClick(i: number) {
   propType.value = props.props[i].type;
   propOptions.value = props.props[i].options;
   propExplanation.value = props.props[i].explanation;
+  emit("prop-changed");
 }
 </script>
 
@@ -40,9 +45,14 @@ function onClick(i: number) {
             tabindex="0"
             v-text="prop.prop"
           />
+          <span v-if="!props.props">esse componente não recebe props</span>
         </ul>
       </template>
-      <Card v-if="selectedProp" :title="`${selectedProp} (${propType})`" plain>
+      <Card
+        v-if="selectedProp && !componentChanged"
+        :title="`${selectedProp} (${propType})`"
+        plain
+      >
         <template #subtitle>
           <ul class="options-list">
             <li

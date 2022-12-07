@@ -2,14 +2,14 @@
 import { ref, type Ref } from "vue";
 
 interface ContainerProps {
-  align?: string;
+  align?: "left" | "right";
 }
 
 const props = defineProps<ContainerProps>();
 
 const containerClass: Ref<Array<string>> = ref([]);
 
-if (props.align === "left" || props.align === "right") {
+if (props.align) {
   containerClass.value.push(`-align-${props.align}`);
 }
 </script>

@@ -1,16 +1,19 @@
 <script setup lang="ts">
-import { Container, Flexbox } from "..";
-import readme from "../readme.json";
-import ComponentShowcase from "@/components/ComponentShowcase.vue";
 import { ref, type Ref } from "vue";
+import { Container, Flexbox } from "..";
+import ComponentShowcase from "@/components/ComponentShowcase.vue";
+import readme from "../readme.json";
 
 const currentTitle: Ref<string> = ref("");
 
 const selectedProp: Ref<any> = ref([]);
 
+const componentChanged: Ref<boolean> = ref(true);
+
 function changeTitle(g: number, c: number) {
   if (currentTitle.value != readme[g].components[c].component) {
     currentTitle.value = readme[g].components[c].component;
+    componentChanged.value = true;
   } else currentTitle.value = "";
 
   selectedProp.value = readme[g].components[c].props;
@@ -36,8 +39,10 @@ function changeTitle(g: number, c: number) {
       <section>
         <ComponentShowcase
           v-show="currentTitle"
+          :component-changed="componentChanged"
           :title="currentTitle"
           :props="selectedProp"
+          @prop-changed="componentChanged = false"
         />
       </section>
     </Container>

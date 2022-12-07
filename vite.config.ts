@@ -15,13 +15,12 @@ export default defineConfig({
       "@theme": fileURLToPath(
         new URL("./node_modules/theme-default/scss/main.scss", import.meta.url)
       ),
-    },
-  },
-  css: {
-    preprocessorOptions: {
-      scss: {
-        additionalData: `@import "./node_modules/theme-default/scss/mixins/breakpoints.scss";`,
-      },
+      "@theme-dev": fileURLToPath(
+        new URL(
+          "./node_modules/theme-default_dev/scss/main.scss",
+          import.meta.url
+        )
+      ),
     },
   },
 });

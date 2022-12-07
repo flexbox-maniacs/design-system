@@ -4,45 +4,34 @@ import { ref, type Ref } from "vue";
 import { Icon } from "../../..";
 
 interface ToastProps {
-  text?: string | object;
-  variant?: string;
+  label?: string | object;
+  variant: "danger" | "info" | "success" | "warning";
 }
 
 const props = defineProps<ToastProps>();
 
 const toastClass: Ref<Array<string>> = ref([]);
 
-if (
-  props.variant === "danger" ||
-  props.variant === "info" ||
-  props.variant === "success" ||
-  props.variant === "warning"
-) {
+if (props.variant) {
   toastClass.value.push(`-${props.variant}`);
 }
 
 const iconName = computed<string | undefined>(() => {
-  if (props.variant === "danger") {
-    return "error_outline";
-  }
+  const icons = {
+    danger: "error_outline",
+    info: "info",
+    success: "check_circle",
+    warning: "warning_amber",
+  };
 
-  if (props.variant === "info") {
-    return "info";
-  }
-
-  if (props.variant === "success") {
-    return "check_circle";
-  }
-
-  if (props.variant === "warning") {
-    return "warning_amber";
-  }
+  return icons[props.variant];
 });
 </script>
 
 <template>
   <div class="toast" :class="toastClass">
     <Icon v-if="props.variant" :name="iconName" />
+    {{ label }}
     <slot />
   </div>
 </template>

@@ -5,7 +5,7 @@ import { Icon } from "../../..";
 interface LinkProps {
   color?: string;
   href?: string;
-  to?: string;
+  to?: string | object;
 }
 
 const props = defineProps<LinkProps>();
