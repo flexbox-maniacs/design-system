@@ -1,4 +1,4 @@
-import Icon from "./Icon.vue";
+/* import Icon from "./Icon.vue";
 
 export default {
   title: "ui/Icon",
@@ -18,3 +18,4 @@ Default.args = {
   name: "face",
   color: "primary",
 };
+ */

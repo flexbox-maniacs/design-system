@@ -3,8 +3,18 @@ import Toast from "./Toast.vue";
 export default {
   title: "ui/Toast",
   component: Toast,
-  args: {
-    text: "",
+  argTypes: {
+    variant: {
+      options: ["danger", "info", "success", "warning"],
+      control: { type: "radio" },
+    },
+    default: {
+      control: "text",
+      defaultValue: "sucesso",
+    },
+    label: {
+      control: "text",
+    },
   },
 };
 
@@ -13,8 +23,7 @@ const Template = (args) => ({
   setup() {
     return { args };
   },
-  template:
-    '<Toast v-bind="args">Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, iusto distinctio assumenda animi tempora et architecto culpa similique facere fugiat labore dignissimos impedit, expedita ducimus enim nihil esse soluta placeat.</Toast>',
+  template: `<Toast v-bind="args">${!args.label ? args.default : ""}</Toast>`,
 });
 
 export const Default = Template.bind({});

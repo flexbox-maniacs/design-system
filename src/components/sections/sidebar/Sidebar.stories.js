@@ -1,5 +1,5 @@
-export default {};
-/* import Header from "./Header.vue";
+/* export default {};
+import Header from "./Header.vue";
 
 export default {
   title: "components/Header",
